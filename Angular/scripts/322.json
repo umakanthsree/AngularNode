@@ -1,0 +1,12 @@
+  {
+      "Driver": {
+          "givenName": "Sebastian",
+          "familyName": "Vettel",
+          "driverId":322
+      },
+      "points": 322,
+      "nationality": "German",
+      "Constructors": [
+          {"name": "Red Bull"}
+      ]
+  }

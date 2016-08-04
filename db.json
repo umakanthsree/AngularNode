@@ -1,0 +1,46 @@
+{
+  "drivers": [
+    {
+      "id": 1,
+      "Driver": {
+        "givenName": "Sebastian",
+        "familyName": "Vettel"
+      },
+      "points": 322,
+      "nationality": "German",
+      "Constructors": [
+        {
+          "name": "Red Bull"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "Driver": {
+        "givenName": "Fernando",
+        "familyName": "Alonso"
+      },
+      "points": 207,
+      "nationality": "Spanish",
+      "Constructors": [
+        {
+          "name": "Ferrari"
+        }
+      ]
+    },
+    {
+      "Driver": {
+        "givenName": "Umakanth",
+        "familyName": "Sree"
+      },
+      "points": 143,
+      "nationality": "Indian",
+      "Constructors": [
+        {
+          "name": "Tiger Bull"
+        }
+      ],
+      "id": 4
+    }
+  ]
+}

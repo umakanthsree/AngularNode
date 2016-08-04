@@ -1,0 +1,61 @@
+1. Form validation :: https://www.sitepoint.com/easy-form-validation-angularjs-ngmessages/
+	ngMessages:: To validate the form field based on the attribute specified eg. require, minlength, maxlength, ng-pattern(regex)
+				email.
+	eg:: 
+			<label>Last Name:</label>
+			<input type="text" name="userLastName" ng-model="lastName"  
+			ng-pattern="/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/"
+			required />
+			<div ng-messages="exampleForm.userLastName.$error">
+			  <div ng-message="required">This field is required</div>
+			  <div ng-message="pattern">Doesnt match the pattern</div>
+			</div>
+	$error is the ngmessages key.
+	hint:: (formname).(fieldname/modelfield).$error
+
+
+form validate directives :: ng-valid, ng-invalid, ng-pristine, ng-dirty,
+	ng-required, ng-minlength, ng-maxlength, ng-patternn, ng-toucehd.
+
+2.<form novalidate name="subject"> </form>
+	note :: novalidate is used to disable browser's native form validation.
+
+3. ngModelOptions :: By default, any change to the content will trigger a model update and form validation. You can override this behavior using the ngModelOptions directive to bind only to specified list of events. I.e. ng-model-options="{ updateOn: 'blur' }" will update and validate only after the control loses focus.
+
+
+ng-show/ng-hide/ ==> to hide/show div (display:none)
+ng-if = '' ==> to remove div (visibility:none)
+ng-disabled == to disable th e button or form
+
+4. http service 
+5.architecture
+6. directive scoping :: scope : true ==> unshared / ( Directive gets a new scope )
+						scope = false ==> shared /  ( Directive uses its parent scope )
+						scope = {} ==> isolated / ( Directive gets a new isolated scope )
+							prefixes::
+								1. "@"   (  Text binding / one-way binding )
+								2. "="   ( Direct model binding / two-way binding )
+								3. "&"   ( Behaviour binding / Method binding  )
+
+$digest :: when any model is changed, view gets reflected bcz of watcher attached to model. so this watcher is called whenever a changed is detective and this known by angular throught digest cycle step. usually ever ydirective of angular call $scop.$digest() IF ANY CHANGES DETECTED.
+	Before $digest is called, $apply is called actually which triggers $rootscope.$digest --> as a result watchers starts executing from parent to all child levels.
+
+Manual:: their are times when we maunally need to call $apply. when?
+	-- Angular takes care of calling $apply and digest cycle untill any changes to model is done under angular context.
+	So its responsibility of us to call $pply, when we chagne anythign out of angular context.
+	eg:: settimeout.
+
+$digest --  executes minimum 2times dirty check.
+
+
+ Note::: At a minimum, $digest will run twice even if your listener functions don’t change any models. As discussed above, it runs once more to make sure the models are stable and there are no changes.
+
+
+
+
+ Dependency Annotation
+Angular invokes certain functions (like service factories and controllers) via the injector. You need to annotate these functions so that the injector knows what services to inject into the function. There are three ways of annotating your code with service name information:
+
+Using the inline array annotation (preferred)
+Using the $inject property annotation
+Implicitly from the function parameter names (has caveats)

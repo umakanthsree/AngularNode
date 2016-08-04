@@ -1,0 +1,12 @@
+angular.module("F1FeederApp.services",[])
+.factory("dataAPICalls",function(){
+	
+	var dataAPICalls = {}
+
+	dataAPICalls.getDrivers = function(){
+		return $http({
+        method: 'JSON', 
+        url: 'driverslist.json'
+      });
+	}
+});
